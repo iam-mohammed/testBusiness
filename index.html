@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Business</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #5C6BC0, #8E24AA, #3949AB, #43A047);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center text-white font-sans">
+
+  <!-- HEADER -->
+  <header class="text-center mt-16 mb-12 px-6">
+    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl max-w-2xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-3">My Business Name</h1>
+      <p class="text-lg opacity-90">We offer modern, high-quality services that help you every day with innovation and care.</p>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="w-full max-w-3xl px-6 text-center mb-16">
+    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl">
+      <h2 class="text-3xl font-bold mb-6">📞 Contact & Social Media</h2>
+
+      <!-- Social Media -->
+      <div class="flex flex-wrap justify-center gap-6 mb-8 text-lg">
+        <a href="#" class="hover:text-pink-400 flex items-center gap-2 transition text-2xl"><i class="fab fa-tiktok"></i> TikTok</a>
+        <a href="#" class="hover:text-purple-400 flex items-center gap-2 transition text-2xl"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#" class="hover:text-blue-400 flex items-center gap-2 transition text-2xl"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="#" class="hover:text-yellow-400 flex items-center gap-2 transition text-2xl"><i class="fab fa-snapchat"></i> Snapchat</a>
+      </div>
+
+      <!-- Phone Numbers (stacked vertically) -->
+      <div class="flex flex-col items-center gap-6">
+
+        <!-- Phone 1 -->
+        <div class="bg-white/20 p-5 rounded-2xl w-full md:w-2/3">
+          <p class="text-xl font-semibold mb-4">0750 190 9090</p>
+          <div class="flex justify-center gap-4 flex-wrap">
+            <a href="https://wa.me/9647501909090" target="_blank" class="bg-green-500 hover:bg-green-600 px-5 py-2 rounded-lg flex items-center gap-2 transition"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="viber://chat?number=+9647501909090" target="_blank" class="bg-purple-500 hover:bg-purple-600 px-5 py-2 rounded-lg flex items-center gap-2 transition"><i class="fab fa-viber"></i> Viber</a>
+          </div>
+        </div>
+
+        <!-- Phone 2 -->
+        <div class="bg-white/20 p-5 rounded-2xl w-full md:w-2/3">
+          <p class="text-xl font-semibold mb-4">0770 190 9090</p>
+          <div class="flex justify-center gap-4 flex-wrap">
+            <a href="https://wa.me/9647701909090" target="_blank" class="bg-green-500 hover:bg-green-600 px-5 py-2 rounded-lg flex items-center gap-2 transition"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="viber://chat?number=+9647701909090" target="_blank" class="bg-purple-500 hover:bg-purple-600 px-5 py-2 rounded-lg flex items-center gap-2 transition"><i class="fab fa-viber"></i> Viber</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="w-full max-w-4xl px-6 mb-16">
+    <div class="text-center mb-8">
+      <h2 class="text-4xl font-extrabold mb-3">🛠️ Our Services</h2>
+      <p class="text-lg text-white/80">High-quality, modern services designed to make your business shine.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Service 1 -->
+      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="text-4xl mb-3 text-green-400">👔</div>
+        <h3 class="font-bold text-xl mb-2">Business Apparel</h3>
+        <p class="text-white/80 text-sm">Modern clothing and uniforms with high-quality fabrics for everyday use.</p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="text-4xl mb-3 text-pink-400">👗</div>
+        <h3 class="font-bold text-xl mb-2">Women's Fashion</h3>
+        <p class="text-white/80 text-sm">Daily wear, outdoor fashion, and custom pieces designed for comfort and style.</p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="text-4xl mb-3 text-purple-400">🎨</div>
+        <h3 class="font-bold text-xl mb-2">Custom Design</h3>
+        <p class="text-white/80 text-sm">Unique clothing designs and small-batch products tailored for special occasions.</p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="text-4xl mb-3 text-blue-400">🖌️</div>
+        <h3 class="font-bold text-xl mb-2">Graphic & Branding</h3>
+        <p class="text-white/80 text-sm">Complete brand identity design, packaging, logos, and campaign visuals.</p>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="text-4xl mb-3 text-yellow-400">🖨️</div>
+        <h3 class="font-bold text-xl mb-2">Printing & Gallery</h3>
+        <p class="text-white/80 text-sm">Screen printing, DTG, and gallery services for uniforms, commercial products, and tags.</p>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="text-4xl mb-3 text-red-400">📸</div>
+        <h3 class="font-bold text-xl mb-2">Product Photography</h3>
+        <p class="text-white/80 text-sm">High-quality photos for e-commerce listings and social media campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION WITH MAP -->
+  <section class="w-full max-w-3xl px-6 mb-16 text-center">
+    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl">
+      <h2 class="text-3xl font-bold mb-6">📍 Location</h2>
+      <div class="rounded-2xl overflow-hidden shadow-xl">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843101209807!2d144.95373531531658!3d-37.816279379751606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f3e07bb3%3A0x5045675218ce840!2zTWVsYm91cm5lIFZJQywgQXVzdHJhbGlh!5e0!3m2!1sen!2sus!4v1602568233251!5m2!1sen!2sus" 
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKING HOURS -->
+  <footer class="w-full max-w-3xl px-6 mb-12 text-center">
+    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl">
+      <p class="text-lg font-medium">🕘 <strong>Working Hours:</strong> Saturday to Thursday — 9 AM to 6 PM</p>
+    </div>
+  </footer>
+
+</body>
+</html>
