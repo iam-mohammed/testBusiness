@@ -64,13 +64,39 @@
     .facebook { background: linear-gradient(135deg, #1877F2, #3b5998); }
     .snapchat { background: linear-gradient(135deg, #FFFC00, #FFD600); color: black; }
 
-    /* Dropdown menu */
+    /* Modern dropdown */
+    #dropdown {
+      opacity: 0;
+      transform: scale(0.9) translateY(-10px);
+      transform-origin: top right;
+      transition: all 0.25s ease-in-out;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    #dropdown.show {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
     #dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.75rem 1rem;
       font-weight: 500;
-      color: #fff;
+      color: white;
+      transition: all 0.3s ease;
     }
     #dropdown a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: translateX(4px);
+    }
+
+    /* Menu button animation */
+    #menu-btn i {
+      transition: transform 0.3s ease;
+    }
+    #menu-btn.open i {
+      transform: rotate(90deg);
     }
   </style>
 </head>
@@ -85,11 +111,11 @@
         <button id="menu-btn" class="text-white text-2xl focus:outline-none bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl shadow hover:bg-white/30 transition">
           <i class="fas fa-bars"></i>
         </button>
-        <div id="dropdown" class="hidden absolute right-0 mt-2 w-48 bg-gradient-to-br from-purple-500 via-indigo-400 to-green-300 text-white rounded-xl shadow-xl flex flex-col overflow-hidden">
-          <a href="#home" class="px-4 py-2 hover:bg-white/20 transition">Home</a>
-          <a href="#services" class="px-4 py-2 hover:bg-white/20 transition">Services</a>
-          <a href="#contact" class="px-4 py-2 hover:bg-white/20 transition">Contact</a>
-          <a href="#location" class="px-4 py-2 hover:bg-white/20 transition">Location</a>
+        <div id="dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white/10 rounded-2xl shadow-2xl overflow-hidden">
+          <a href="#home"><i class="fas fa-home"></i> Home</a>
+          <a href="#services"><i class="fas fa-cogs"></i> Services</a>
+          <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="#location"><i class="fas fa-map-marker-alt"></i> Location</a>
         </div>
       </div>
     </div>
@@ -155,42 +181,37 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Service 1 -->
+      <!-- Service Cards -->
       <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
         <div class="text-4xl mb-3 text-green-400">👔</div>
         <h3 class="font-bold text-xl mb-2">Business Apparel</h3>
         <p class="text-white/80 text-sm">Modern clothing and uniforms with high-quality fabrics for everyday use.</p>
       </div>
 
-      <!-- Service 2 -->
       <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
         <div class="text-4xl mb-3 text-pink-400">👗</div>
         <h3 class="font-bold text-xl mb-2">Women's Fashion</h3>
         <p class="text-white/80 text-sm">Daily wear, outdoor fashion, and custom pieces designed for comfort and style.</p>
       </div>
 
-      <!-- Service 3 -->
       <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
         <div class="text-4xl mb-3 text-purple-400">🎨</div>
         <h3 class="font-bold text-xl mb-2">Custom Design</h3>
         <p class="text-white/80 text-sm">Unique clothing designs and small-batch products tailored for special occasions.</p>
       </div>
 
-      <!-- Service 4 -->
       <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
         <div class="text-4xl mb-3 text-blue-400">🖌️</div>
         <h3 class="font-bold text-xl mb-2">Graphic & Branding</h3>
         <p class="text-white/80 text-sm">Complete brand identity design, packaging, logos, and campaign visuals.</p>
       </div>
 
-      <!-- Service 5 -->
       <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
         <div class="text-4xl mb-3 text-yellow-400">🖨️</div>
         <h3 class="font-bold text-xl mb-2">Printing & Gallery</h3>
         <p class="text-white/80 text-sm">Screen printing, DTG, and gallery services for uniforms, commercial products, and tags.</p>
       </div>
 
-      <!-- Service 6 -->
       <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
         <div class="text-4xl mb-3 text-red-400">📸</div>
         <h3 class="font-bold text-xl mb-2">Product Photography</h3>
@@ -228,8 +249,26 @@
   <script>
     const btn = document.getElementById('menu-btn');
     const dropdown = document.getElementById('dropdown');
+
     btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
       dropdown.classList.toggle('hidden');
+
+      // Smooth show animation
+      if (!dropdown.classList.contains('hidden')) {
+        setTimeout(() => dropdown.classList.add('show'), 10);
+      } else {
+        dropdown.classList.remove('show');
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+        dropdown.classList.remove('show');
+        btn.classList.remove('open');
+      }
     });
   </script>
 </body>
