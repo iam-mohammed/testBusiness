@@ -1,275 +1,271 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Business</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Business</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- FontAwesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <style>
-    body {
-      scroll-behavior: smooth;
-      background: linear-gradient(135deg, #667eea, #764ba2, #43cea2);
-      background-size: 400% 400%;
-      animation: gradientShift 12s ease infinite;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    <style>
+        body {
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #667eea, #764ba2, #43cea2);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+        }
 
-    /* Social & phone buttons */
-    .icon-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.6rem 1rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      color: white;
-      font-size: 1.2rem;
-    }
-    .icon-button:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    }
-    .whatsapp { background: linear-gradient(135deg, #25D366, #1EBE5A); }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
 
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: white;
-      padding: 0.9rem 0;
-      border-radius: 14px;
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-    .social-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    }
+            50% {
+                background-position: 100% 50%;
+            }
 
-    .tiktok { background: linear-gradient(135deg, #010101, #ff0050); }
-    .instagram { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4); }
-    .facebook { background: linear-gradient(135deg, #1877F2, #3b5998); }
-    .snapchat { background: linear-gradient(135deg, #FFFC00, #FFD600); color: black; }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    /* Modern dropdown */
-    #dropdown {
-      opacity: 0;
-      transform: scale(0.9) translateY(-10px);
-      transform-origin: top right;
-      transition: all 0.25s ease-in-out;
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    #dropdown.show {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-    #dropdown a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0.75rem 1rem;
-      font-weight: 500;
-      color: white;
-      transition: all 0.3s ease;
-    }
-    #dropdown a:hover {
-      background-color: rgba(255, 255, 255, 0.25);
-      transform: translateX(4px);
-    }
+        /* Social & phone buttons */
+        .icon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 1.2rem;
+        }
 
-    /* Menu button animation */
-    #menu-btn i {
-      transition: transform 0.3s ease;
-    }
-    #menu-btn.open i {
-      transform: rotate(90deg);
-    }
-  </style>
+        .icon-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #1EBE5A);
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: white;
+            padding: 0.9rem 0;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .tiktok {
+            background: linear-gradient(135deg, #010101, #ff0050);
+        }
+
+        .instagram {
+            background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #1877F2, #3b5998);
+        }
+
+        .snapchat {
+            background: linear-gradient(135deg, #FFFC00, #FFD600);
+            color: black;
+        }
+    </style>
 </head>
 
 <body class="min-h-screen flex flex-col items-center text-white font-sans">
 
-  <!-- NAVIGATION -->
-  <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-3xl px-6">
-    <div class="bg-gradient-to-r from-purple-600 via-indigo-500 to-green-400 rounded-3xl p-4 flex justify-between items-center shadow-2xl">
-      <span class="text-xl font-bold text-white">My Business</span>
-      <div class="relative">
-        <button id="menu-btn" class="text-white text-2xl focus:outline-none bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl shadow hover:bg-white/30 transition">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div id="dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white/10 rounded-2xl shadow-2xl overflow-hidden">
-          <a href="#home"><i class="fas fa-home"></i> Home</a>
-          <a href="#services"><i class="fas fa-cogs"></i> Services</a>
-          <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-          <a href="#location"><i class="fas fa-map-marker-alt"></i> Location</a>
+    <!-- HEADER -->
+    <header id="home" class="text-center mt-16 mb-12 px-6">
+        <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl max-w-2xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-3">My Business Name</h1>
+            <p class="text-lg opacity-90">We offer modern, high-quality services that help you every day with innovation
+                and care.</p>
         </div>
-      </div>
-    </div>
-  </nav>
+    </header>
 
-  <!-- HEADER -->
-  <header id="home" class="text-center mt-28 mb-12 px-6">
-    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl max-w-2xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-3">My Business Name</h1>
-      <p class="text-lg opacity-90">We offer modern, high-quality services that help you every day with innovation and care.</p>
-    </div>
-  </header>
+    <!-- CONTACT & SOCIAL SECTION -->
+    <section id="contact" class="w-full max-w-3xl px-6 text-center mb-16">
+        <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl">
+            <h2 class="text-3xl font-bold mb-8">📞 Contact & Social Media</h2>
 
-  <!-- CONTACT & SOCIAL SECTION -->
-  <section id="contact" class="w-full max-w-3xl px-6 text-center mb-16">
-    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl">
-      <h2 class="text-3xl font-bold mb-8">📞 Contact & Social Media</h2>
+            <!-- Social Media -->
+            <div class="flex flex-col items-center gap-4 mb-10 w-full px-4">
+                <a href="https://www.tiktok.com" target="_blank" class="social-link tiktok">
+                    <i class="fab fa-tiktok text-2xl"></i> TikTok
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-link instagram">
+                    <i class="fab fa-instagram text-2xl"></i> Instagram
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="social-link facebook">
+                    <i class="fab fa-facebook-f text-2xl"></i> Facebook
+                </a>
+                <a href="https://www.snapchat.com" target="_blank" class="social-link snapchat">
+                    <i class="fab fa-snapchat-ghost text-2xl"></i> Snapchat
+                </a>
+            </div>
 
-      <!-- Social Media -->
-      <div class="flex flex-col items-center gap-4 mb-10 w-full px-4">
-        <a href="https://www.tiktok.com" target="_blank" class="social-link tiktok">
-          <i class="fab fa-tiktok text-2xl"></i> TikTok
-        </a>
-        <a href="https://www.instagram.com" target="_blank" class="social-link instagram">
-          <i class="fab fa-instagram text-2xl"></i> Instagram
-        </a>
-        <a href="https://www.facebook.com" target="_blank" class="social-link facebook">
-          <i class="fab fa-facebook-f text-2xl"></i> Facebook
-        </a>
-        <a href="https://www.snapchat.com" target="_blank" class="social-link snapchat">
-          <i class="fab fa-snapchat-ghost text-2xl"></i> Snapchat
-        </a>
-      </div>
+            <!-- Phone Numbers -->
+            <div class="flex flex-col items-center gap-4 w-full px-4">
+                <div class="bg-white/20 p-4 rounded-2xl w-full flex items-center justify-between text-lg font-medium">
+                    <span class="ml-2">0750 190 9090</span>
+                    <div class="flex gap-3 mr-2">
+                        <a href="https://wa.me/9647501909090" target="_blank" class="icon-button whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
 
-      <!-- Phone Numbers -->
-      <div class="flex flex-col items-center gap-4 w-full px-4">
-        <div class="bg-white/20 p-4 rounded-2xl w-full flex items-center justify-between text-lg font-medium">
-          <span class="ml-2">0750 190 9090</span>
-          <div class="flex gap-3 mr-2">
-            <a href="https://wa.me/9647501909090" target="_blank" class="icon-button whatsapp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
+                <div class="bg-white/20 p-4 rounded-2xl w-full flex items-center justify-between text-lg font-medium">
+                    <span class="ml-2">0770 190 9090</span>
+                    <div class="flex gap-3 mr-2">
+                        <a href="https://wa.me/9647701909090" target="_blank" class="icon-button whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="w-full max-w-4xl px-6 mb-16">
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-extrabold mb-3">🛠️ Our Services</h2>
+            <p class="text-lg text-white/80">We proudly provide reliable services through our trusted partners.</p>
         </div>
 
-        <div class="bg-white/20 p-4 rounded-2xl w-full flex items-center justify-between text-lg font-medium">
-          <span class="ml-2">0770 190 9090</span>
-          <div class="flex gap-3 mr-2">
-            <a href="https://wa.me/9647701909090" target="_blank" class="icon-button whatsapp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
+        <!-- Grid layout: 2 per row on medium screens and above -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <!-- Service -->
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/fib.jpg" alt="FIB" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">FIB</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/qicard.jpg" alt="QiCard" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">QiCard</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/zaincash.jpg" alt="ZainCash" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">ZainCash</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/fastpay.jpg" alt="FastPay" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">FastPay</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/asiapay.jpg" alt="AsiaPay" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">AsiaPay</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/asiaphone.jpg" alt="AsiaPhone" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">AsiaPhone</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/asseonline.jpg" alt="AsseOnline" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">AsseOnline</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/emory.jpg" alt="Emory" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">Emory</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/nassepay.jpg" alt="NassePay" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">NassePay</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/nasspay.jpg" alt="NassPay" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">NassPay</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/nasswallet.jpg" alt="NassWallet" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">NassWallet</h3>
+            </div>
+
+            <div
+                class="flex items-center bg-white/10 backdrop-blur-lg rounded-2xl p-4 shadow-lg hover:bg-white/20 transition">
+                <img src="images/quickpay.jpg" alt="QuickPay" class="w-20 h-20 object-contain rounded-xl mr-6">
+                <h3 class="text-2xl font-bold text-white">QuickPay</h3>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="w-full max-w-4xl px-6 mb-16">
-    <div class="text-center mb-8">
-      <h2 class="text-4xl font-extrabold mb-3">🛠️ Our Services</h2>
-      <p class="text-lg text-white/80">High-quality, modern services designed to make your business shine.</p>
-    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Service Cards -->
-      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
-        <div class="text-4xl mb-3 text-green-400">👔</div>
-        <h3 class="font-bold text-xl mb-2">Business Apparel</h3>
-        <p class="text-white/80 text-sm">Modern clothing and uniforms with high-quality fabrics for everyday use.</p>
-      </div>
 
-      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
-        <div class="text-4xl mb-3 text-pink-400">👗</div>
-        <h3 class="font-bold text-xl mb-2">Women's Fashion</h3>
-        <p class="text-white/80 text-sm">Daily wear, outdoor fashion, and custom pieces designed for comfort and style.</p>
-      </div>
 
-      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
-        <div class="text-4xl mb-3 text-purple-400">🎨</div>
-        <h3 class="font-bold text-xl mb-2">Custom Design</h3>
-        <p class="text-white/80 text-sm">Unique clothing designs and small-batch products tailored for special occasions.</p>
-      </div>
 
-      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
-        <div class="text-4xl mb-3 text-blue-400">🖌️</div>
-        <h3 class="font-bold text-xl mb-2">Graphic & Branding</h3>
-        <p class="text-white/80 text-sm">Complete brand identity design, packaging, logos, and campaign visuals.</p>
-      </div>
 
-      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
-        <div class="text-4xl mb-3 text-yellow-400">🖨️</div>
-        <h3 class="font-bold text-xl mb-2">Printing & Gallery</h3>
-        <p class="text-white/80 text-sm">Screen printing, DTG, and gallery services for uniforms, commercial products, and tags.</p>
-      </div>
 
-      <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300">
-        <div class="text-4xl mb-3 text-red-400">📸</div>
-        <h3 class="font-bold text-xl mb-2">Product Photography</h3>
-        <p class="text-white/80 text-sm">High-quality photos for e-commerce listings and social media campaigns.</p>
-      </div>
-    </div>
-  </section>
+    <!-- LOCATION -->
+    <section id="location" class="w-full max-w-3xl px-6 mb-16 text-center">
+        <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl">
+            <h2 class="text-3xl font-bold mb-6">📍 Location</h2>
+            <div class="rounded-2xl overflow-hidden shadow-xl mb-6">
+                <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="https://goo.gl/maps/YourPlaceLinkHere" target="_blank" class="icon-button"
+                    style="background:#4285F4;">
+                    <i class="fab fa-google text-white text-2xl"></i>
+                </a>
+                <a href="http://maps.apple.com/?q=Your+Place+Name" target="_blank" class="icon-button"
+                    style="background:#000;">
+                    <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- LOCATION -->
-  <section id="location" class="w-full max-w-3xl px-6 mb-16 text-center">
-    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-8 shadow-2xl">
-      <h2 class="text-3xl font-bold mb-6">📍 Location</h2>
-      <div class="rounded-2xl overflow-hidden shadow-xl mb-6">
-        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-      <div class="flex justify-center gap-6 mt-4">
-        <a href="https://goo.gl/maps/YourPlaceLinkHere" target="_blank" class="icon-button" style="background:#4285F4;">
-          <i class="fab fa-google text-white text-2xl"></i>
-        </a>
-        <a href="http://maps.apple.com/?q=Your+Place+Name" target="_blank" class="icon-button" style="background:#000;">
-          <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="w-full max-w-3xl px-6 mb-12 text-center">
-    <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl">
-      <p class="text-lg font-medium">🕘 <strong>Working Hours:</strong> Saturday to Thursday — 9 AM to 6 PM</p>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const dropdown = document.getElementById('dropdown');
-
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('open');
-      dropdown.classList.toggle('hidden');
-
-      // Smooth show animation
-      if (!dropdown.classList.contains('hidden')) {
-        setTimeout(() => dropdown.classList.add('show'), 10);
-      } else {
-        dropdown.classList.remove('show');
-      }
-    });
-
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.add('hidden');
-        dropdown.classList.remove('show');
-        btn.classList.remove('open');
-      }
-    });
-  </script>
+    <!-- FOOTER -->
+    <footer class="w-full max-w-3xl px-6 mb-12 text-center">
+        <div class="backdrop-blur-lg bg-white/10 rounded-3xl p-6 shadow-2xl">
+            <p class="text-lg font-medium">🕘 <strong>Working Hours:</strong> Saturday to Thursday — 9 AM to 6 PM</p>
+        </div>
+    </footer>
 </body>
+
 </html>
